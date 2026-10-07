@@ -1,0 +1,14 @@
+﻿name: macOS runner smoke test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: macos-15
+    timeout-minutes: 5
+    steps:
+      - run: |
+          sw_vers
+          xcodebuild -version
+          echo "macOS runner ready"
